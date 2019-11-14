@@ -5,8 +5,7 @@ function Login(props) {
     const [user, setUser] = useState({
         username:'',
         password:''
-    })
-
+    })  
     const handleChange = e => {
         setUser({
             ...user,
@@ -29,16 +28,17 @@ function Login(props) {
     return (
 
         <form onSubmit={handleSubmit}>
-             <h2>Login</h2>
             <input 
                 name= 'username'
                 type ='text'
                 value = {user.username}
+                placeholder = 'UserName'
                 onChange= {handleChange}
             />
             <input 
                 name= 'password'
-                type ='passworx'
+                type=' password'
+                placeholder = 'Password'
                 value = {user.password}
                 onChange= {handleChange}
             />

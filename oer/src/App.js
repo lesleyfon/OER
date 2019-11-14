@@ -4,22 +4,16 @@ import Register from './Components/Login/Register';
 import Login from './Components/Login/Login';
 import PrivateRoute from './Components/PrivateRoute';
 import Home from './Components/Home';
+import RenderLoginRegister from './Components/Login/RenderLoginRegister';
 
 
 function App() {
   return (
     <div className="App">
-      <header>
-        hello OER
-      </header>
-     
       <Route
-        path ='/login'
-        component={Login}
-      />
-      <Route 
-        path ='/register'
-        component={Register}
+        path ='/'
+        exact
+        component={RenderLoginRegister}
       />
       <PrivateRoute 
           path = '/home'
