@@ -37,7 +37,7 @@ function Login(props) {
             />
             <input 
                 name= 'password'
-                type=' password'
+                type='password'
                 placeholder = 'Password'
                 value = {user.password}
                 onChange= {handleChange}
