@@ -3,9 +3,9 @@ const initialState = {
     books : [],
     error : ''
 }
-export const FETCHING_BOOK_DATA = 'FETCHING_BOOK_DATA';
-export const FETCHING_BOOK_SUCCESS = 'FETCHING_BOOK_SUCCESS';
-export const FETCHING_BOOK_ERROR = 'FETCHING_BOOK_ERROR';
+export const FETCHING_BOOK_DATA = 'FETCHING_BOOK_DATA'
+export const FETCHING_BOOK_SUCCESS = 'FETCHING_BOOK_SUCCESS'
+export const FETCHING_BOOK_ERROR = 'FETCHING_BOOK_ERROR'
 
 export function reducer (state = initialState, action) {
     switch(action.type){

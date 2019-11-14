@@ -1,7 +1,13 @@
-import React from 'react'
+import React, {useEffect}from 'react';
+import {connect} from 'react-redux'
 import NavBar from './Header/NavBar'
+import { fetchBooks } from './../actions.js/booksActions'
 
-function Home() {
+function Home(props) {
+    
+    useEffect(() => {
+        props.fetchBooks()
+    }, [])
     return (
         <div>
             <NavBar />
@@ -10,4 +16,12 @@ function Home() {
     )
 }
 
-export default Home
+const mapStateToProps = state => {
+    console.log(state)
+    return {
+        books : state.books
+    }
+}
+
+
+export default connect(mapStateToProps, {fetchBooks})(Home)
