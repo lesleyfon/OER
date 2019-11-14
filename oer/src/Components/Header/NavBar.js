@@ -1,10 +1,28 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-function NavBar() {
+function NavBar(props) {
+
+    const logOut = e => {
+        e.preventDefault();
+        localStorage.removeItem('token');
+        props.history.push('/')
+    }
     return (
         <NavBarStyled>
-            
+            <nav>
+                <ul>
+                    <li> <Link to='/home'>Home</Link></li>
+                    <li><Link to='/saved'>Saved books</Link></li>
+                    <li><Link to='/recent'>Recently Viewed</Link></li>
+                </ul>
+            </nav>
+
+            <div>
+                <input />
+                <button onClick= {logOut}>LogOut</button>
+            </div>
         </NavBarStyled>
     )
 }

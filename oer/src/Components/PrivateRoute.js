@@ -13,7 +13,7 @@ function PrivateRoute( props){
                     ?
                 <Component {...props} />
                     :
-                <Redirect to = 'login' />
+                <Redirect to = '/' />
             )
             }
     />)
