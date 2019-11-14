@@ -1,5 +1,5 @@
-import React, {useState}from 'react'
-
+import React, {useState}from 'react';
+import api from './../../utils/api'
 function Register() {
     const [user, setUser] = useState({
         name:'',
@@ -13,8 +13,20 @@ function Register() {
             [e.target.name]: e.target.value
         })
     } 
+    
+    const handleSubmit = e => {
+        e.preventDefault();
+        api().post('/api/auth/register', user)
+            .then(res=> { 
+                console.log(res)
+            })
+            .catch(err=> {
+                console.log(err)
+            })
+    } 
+
     return (
-        <form>
+        <form onSubmit={handleSubmit}>
 
              <input 
                 name= 'name'
@@ -38,7 +50,7 @@ function Register() {
                 value = {user.password}
                 onChange= {handleChange}
             />
-
+            <button>Submit</button>
         </form>
     )
 }

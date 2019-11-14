@@ -1,5 +1,6 @@
 import React from 'react';
 import Register from './Components/Login/Register';
+import Login from './Components/Login/Login';
 
 
 function App() {
@@ -9,6 +10,8 @@ function App() {
         hello OER
       </header>
       <Register />
+      <h2>Login</h2>
+      <Login />
     </div>
   );
 }
