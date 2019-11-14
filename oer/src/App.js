@@ -1,6 +1,9 @@
 import React from 'react';
+import { Route } from 'react-router-dom';
 import Register from './Components/Login/Register';
 import Login from './Components/Login/Login';
+import PrivateRoute from './Components/PrivateRoute';
+import Home from './Components/Home';
 
 
 function App() {
@@ -9,9 +12,20 @@ function App() {
       <header>
         hello OER
       </header>
-      <Register />
-      <h2>Login</h2>
-      <Login />
+     
+      <Route
+        path ='/login'
+        component={Login}
+      />
+      <Route 
+        path ='/register'
+        component={Register}
+      />
+      <PrivateRoute 
+          path = '/home'
+          exact
+          component ={Home} 
+        />
     </div>
   );
 }

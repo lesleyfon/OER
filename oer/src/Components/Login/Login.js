@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import api from './../../utils/api'
 
-function Login() {
+function Login(props) {
     const [user, setUser] = useState({
         username:'',
         password:''
@@ -15,10 +15,11 @@ function Login() {
     } 
     const handleSubmit = e => {
         e.preventDefault();
-        console.log(user)
         api().post('/api/auth/login', user)
             .then(res=> { 
                 localStorage.setItem('token', res.data.token)
+                console.log(props)
+                props.history.push('/home')
             })
             .catch(err=> {
                 console.log(err)
@@ -26,7 +27,9 @@ function Login() {
     } 
 
     return (
+
         <form onSubmit={handleSubmit}>
+             <h2>Login</h2>
             <input 
                 name= 'username'
                 type ='text'
