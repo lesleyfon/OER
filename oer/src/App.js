@@ -1,4 +1,6 @@
 import React from 'react';
+import Register from './Components/Login/Register';
+
 
 function App() {
   return (
@@ -6,6 +8,7 @@ function App() {
       <header>
         hello OER
       </header>
+      <Register />
     </div>
   );
 }

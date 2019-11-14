@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState}from 'react'
 
 function Register() {
     const [user, setUser] = useState({
@@ -15,22 +15,26 @@ function Register() {
     } 
     return (
         <form>
+
              <input 
                 name= 'name'
                 type ='text'
                 value = {user.name}
+                placeholder='Name'
                 onChange= {handleChange}
-            />
+                />
             <input 
                 name= 'username'
                 type ='text'
+                placeholder='UserName'
                 value = {user.username}
                 onChange= {handleChange}
-            />
+                />
 
             <input 
                 name= 'password'
                 type ='password'
+                placeholder='Password'
                 value = {user.password}
                 onChange= {handleChange}
             />
