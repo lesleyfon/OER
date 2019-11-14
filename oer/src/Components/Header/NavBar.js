@@ -80,10 +80,12 @@ const NavBarStyled = styled.div`
     }
     .right-container input{
         font-size: 1rem;
-        padding-left: 10px
+        padding-left: 10px;
+        outline:none;
 
     }
     .right-container button{
+
         padding: 10px 20px;
         font-size: 1rem;
         font-weight: 132px;
@@ -92,6 +94,7 @@ const NavBarStyled = styled.div`
         text-align: center;
         background: #FAFBDB;
         border-radius: 10px;
+        outline:none;
 
     }
 `;
